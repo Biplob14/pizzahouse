@@ -3,16 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+// use App\Pizza;
 
 class PizzaController extends Controller
 {
     public function index() {
         
-        $pizzas = [
-            ['type' => 'hawaiian', 'base' => 'cheesy crust'],
-            ['type' => 'volcano', 'base' => 'garlic crust'],
-            ['type' => 'veg supreme', 'base' => 'thin & crispy'],
-        ];
+        // $pizzas = Pizza::all();
+        $pizzas = DB::select("select * from pizzas");
     
     
         return view('pizzas', [

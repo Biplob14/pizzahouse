@@ -9,8 +9,7 @@
         </div>
         @foreach ($pizzas as $pizza)
             <div class="pizza-list">
-                {{ $loop->index }} {{ $pizza['type'] }} - {{ $pizza['base'] }}
-                <br>
+              {{ $pizza->name }} - {{ $pizza->type }} - {{ $pizza->base }}
             </div>
             
         @endforeach
